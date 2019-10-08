@@ -8,14 +8,14 @@ def version
         {
           stage('Create Image Builder') {
             steps {
-              sh "oc new-build https://github.developer.allianz.io/ai-solutions/adp-toolchain-configuration.git --context-dir=/slave-nodejs-with-newman --name=adp-jenkins-slave-nodejs-with-newman-latest --strategy=docker --image-stream=adp-jenkins-slave-nodejs:latest --to=adp-jenkins-slave-nodejs-with-newman:latest"
+              sh "oc new-build https://github.com/dwessendorf/slave-nodejs-with-newman.git --name=adp-jenkins-slave-nodejs-with-newman-latest --strategy=docker --image-stream=adp-jenkins-slave-nodejs:latest --to=adp-jenkins-slave-nodejs-with-newman:latest"
 
             }
           }
           stage('Build Image') {
 
             steps {
-              git branch: 'master', url: 'https://github.developer.allianz.io/ai-solutions/adp-toolchain-configuration.git', credentialsId: 'git-token-credentials'
+              git branch: 'master', url: 'https://github.com/dwessendorf/slave-nodejs-with-newman.git'
 
               sh "rm -rf ocp && mkdir -p ocp/deployments"
               sh "pwd && ls -la target "
