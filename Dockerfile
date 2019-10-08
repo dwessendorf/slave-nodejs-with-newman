@@ -1,4 +1,4 @@
-FROM adp-jenkins-slave-nodejs:latest
+FROM adp-toolchain/adp-jenkins-slave-nodejs:latest
 MAINTAINER ABA Engineering  <daniel.wessendord@allianz.com>
 LABEL name="ADP Jenkins Slave NodeJS image with newman installed" \
     vendor="Allianz SE"
