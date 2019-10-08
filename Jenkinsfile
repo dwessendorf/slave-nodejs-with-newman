@@ -8,7 +8,7 @@ def version
         {
           stage('Create Image Builder') {
             steps {
-              sh "oc new-build https://github.com/dwessendorf/slave-nodejs-with-newman.git --name=adp-jenkins-slave-nodejs-with-newman-latest --strategy=docker --source-image=adp-jenkins-slave-nodejs:latest --to=adp-jenkins-slave-nodejs-with-newman:latest"
+              sh "oc new-build https://github.com/dwessendorf/slave-nodejs-with-newman.git --name=adp-jenkins-slave-nodejs-with-newman-latest --strategy=docker  --to=adp-jenkins-slave-nodejs-with-newman:latest"
 
             }
           }
